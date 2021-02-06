@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/backlog_tracker_fragment">
+
+    <fragment
+        android:id="@+id/backlog_tracker_fragment"
+        android:name="jzam.backlog.backlogtracker.backlogtracker.BacklogTrackerFragment"
+        android:label="@string/backlog_tracker_fragment_label"
+        tools:layout="@layout/fragment_backlog_tracker">
+
+        <action
+            android:id="@+id/action_backlogTrackerFragment_to_addItemFragment"
+            app:destination="@id/add_item_fragment" />
+        <action
+            android:id="@+id/action_backlog_tracker_fragment_to_edit_item_fragment"
+            app:destination="@id/edit_item_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_item_fragment"
+        android:name="jzam.backlog.backlogtracker.additem.AddItemFragment"
+        android:label="@string/add_item_fragment_label"
+        tools:layout="@layout/fragment_add_item">
+
+        <action
+            android:id="@+id/action_addItemFragment_to_backlogTrackerFragment"
+            app:destination="@id/backlog_tracker_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_item_fragment"
+        android:name="jzam.backlog.backlogtracker.edititem.EditItemFragment"
+        android:label="@string/edit_item_fragment_label" >
+        <argument
+            android:name="backlogItemKey"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_edit_item_fragment_to_backlog_tracker_fragment"
+            app:destination="@id/backlog_tracker_fragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BacklogTracker</string>
+    <string name="backlog_tracker_fragment_label">Backlog Tracker</string>
+    <string name="add_item_fragment_label">Add Item</string>
+    <string name="name">Name</string>
+    <string name="add_cancel">Cancel</string>
+    <string name="add_confirm">Add</string>
+    <string name="edit_confirm">Save</string>
+    <string name="edit_item_fragment_label">Edit Item</string>
+    <string name="type_image_description">Item Type</string>
+    <string name="type_label">Type</string>
+    <string name="sort_label">Sort</string>
+    <string name="platform_label">Platform</string>
+    <string name="genre_label">Genre</string>
+    <string name="progress_done_label">Progress Done</string>
+    <string name="progress_total_label">Progress Total</string>
+    <string name="add_label">Add</string>
+    <string name="placeholder_item_name">Like a Dragonfish</string>
+    <string name="placeholder_item_progress">5/7</string>
+    <string name="placeholder_item_platform">PZ4</string>
+    <string name="placeholder_item_genre">JRPG</string>
+    <string name="placeholder_item_sort">20</string>
+    <string name="edit_delete">Delete</string>
+</resources>

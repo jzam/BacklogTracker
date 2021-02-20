@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="gameItem"
+            type="jzam.backlog.backlogtracker.network.GameItem"/>
+        <variable
+            name="clickListener"
+            type="jzam.backlog.backlogtracker.searchgame.SearchGameListener" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:background="#FFFFFF"
+        android:onClick="@{() -> clickListener.onClick(gameItem)}">
+
+        <ImageView
+            android:id="@+id/search_game_icon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:contentDescription="@string/type_image_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:imageUrl="@{gameItem.image.iconUrl}"
+            tools:srcCompat="@drawable/ic_baseline_videogame_asset_24" />
+
+        <TextView
+            android:id="@+id/search_game_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_zero"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:layout_marginEnd="@dimen/margin_tiny"
+            android:lines="1"
+            app:layout_constraintStart_toEndOf="@id/search_game_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:setText="@{gameItem.name}"
+            tools:text="@string/placeholder_item_name" />
+
+        <TextView
+            android:id="@+id/search_game_short_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_tiny"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:layout_marginEnd="@dimen/margin_tiny"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/search_game_icon"
+            app:layout_constraintTop_toBottomOf="@id/search_game_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:setText="@{gameItem.deck}"
+            tools:text="@string/placeholder_item_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

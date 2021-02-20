@@ -2,7 +2,6 @@ package jzam.backlog.backlogtracker
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import jzam.backlog.backlogtracker.R
 
 class MainActivity : AppCompatActivity() {
 

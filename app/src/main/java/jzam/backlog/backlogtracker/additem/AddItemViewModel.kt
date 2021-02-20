@@ -1,6 +1,8 @@
 package jzam.backlog.backlogtracker.additem
 
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -25,6 +27,16 @@ class AddItemViewModel(
     val genre = MutableLiveData<String>()
     val progressDone = MutableLiveData<String>()
     val progressTotal = MutableLiveData<String>()
+
+    val typeSpinnerListener = object : AdapterView.OnItemSelectedListener {
+        override fun onNothingSelected(parent: AdapterView<*>?) {
+            type.value = parent!!.getItemAtPosition(0) as String
+        }
+
+        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            type.value = parent!!.getItemAtPosition(position) as String
+        }
+    }
 
     fun onCancelClicked() {
         _navigateToBacklogTracker.value = true

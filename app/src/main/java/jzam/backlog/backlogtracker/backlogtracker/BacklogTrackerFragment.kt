@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import jzam.backlog.backlogtracker.R
@@ -60,6 +59,14 @@ class BacklogTrackerFragment : Fragment() {
                 this.findNavController().navigate(
                         BacklogTrackerFragmentDirections.actionBacklogTrackerFragmentToEditItemFragment(item))
                 backlogTrackerViewModel.onEditItemNavigated()
+            }
+        })
+
+        backlogTrackerViewModel.navigateToSearch.observe(viewLifecycleOwner, {
+            it?.let {
+                this.findNavController().navigate(
+                        BacklogTrackerFragmentDirections.actionBacklogTrackerFragmentToSearchGameFragment())
+                backlogTrackerViewModel.onSearchNavigated()
             }
         })
 

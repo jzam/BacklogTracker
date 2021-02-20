@@ -36,4 +36,13 @@ data class BacklogItem(
     var platform: String = "[Platform]",
 
     @ColumnInfo(name = "genre")
-    var genre: String = "[Genre]")
+    var genre: String = "[Genre]",
+
+    @ColumnInfo(name = "notes")
+    var notes: String = "",
+
+    @ColumnInfo(name = "icon_image_url")
+    var iconImageUrl: String = "[Icon]",
+
+    @ColumnInfo(name = "detail_image_url")
+    var detailImageUrl: String = "[Image]")

@@ -18,6 +18,10 @@ class BacklogTrackerViewModel(
     val navigateToEditItem: LiveData<Long>
         get() = _navigateToEditItem
 
+    private val _navigateToSearch = MutableLiveData<Boolean>()
+    val navigateToSearch: LiveData<Boolean>
+        get() = _navigateToSearch
+
     fun onAddItemClicked() {
         _navigateToAddItem.value = true
     }
@@ -32,5 +36,13 @@ class BacklogTrackerViewModel(
 
     fun onEditItemNavigated() {
         _navigateToEditItem.value = null
+    }
+
+    fun onSearchClicked() {
+        _navigateToSearch.value = true
+    }
+
+    fun onSearchNavigated() {
+        _navigateToSearch.value = null
     }
 }

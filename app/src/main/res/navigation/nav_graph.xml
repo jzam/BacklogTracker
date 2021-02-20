@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
     app:startDestination="@id/backlog_tracker_fragment">
 
     <fragment
@@ -17,6 +16,9 @@
         <action
             android:id="@+id/action_backlog_tracker_fragment_to_edit_item_fragment"
             app:destination="@id/edit_item_fragment" />
+        <action
+            android:id="@+id/action_backlog_tracker_fragment_to_search_game_fragment"
+            app:destination="@id/search_game_fragment" />
     </fragment>
     <fragment
         android:id="@+id/add_item_fragment"
@@ -38,5 +40,24 @@
         <action
             android:id="@+id/action_edit_item_fragment_to_backlog_tracker_fragment"
             app:destination="@id/backlog_tracker_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/search_game_fragment"
+        android:name="jzam.backlog.backlogtracker.searchgame.SearchGameFragment"
+        android:label="@string/search_game_fragment_label" >
+        <action
+            android:id="@+id/action_search_game_fragment_to_search_game_detail_fragment"
+            app:destination="@id/search_game_detail_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/search_game_detail_fragment"
+        android:name="jzam.backlog.backlogtracker.searchgamedetail.SearchGameDetailFragment"
+        android:label="@string/search_game_detail_label" >
+        <argument
+            android:name="gameItem"
+            app:argType="jzam.backlog.backlogtracker.network.GameItem"/>
+        <action
+            android:id="@+id/action_search_game_detail_fragment_to_search_game_fragment"
+            app:destination="@id/search_game_fragment" />
     </fragment>
 </navigation>

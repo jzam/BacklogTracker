@@ -24,12 +24,12 @@ class EditItemViewModel(
         get() = _navigateToBacklogTracker
 
     val name = MutableLiveData<String>()
-    val type = MutableLiveData<String>()
     val sortValue = MutableLiveData<String>()
     val platform = MutableLiveData<String>()
     val genre = MutableLiveData<String>()
     val progressDone = MutableLiveData<String>()
     val progressTotal = MutableLiveData<String>()
+    val notes = MutableLiveData<String>()
 
     init {
         item = database.getBacklogItemWithId(backlogItemKey)
@@ -61,22 +61,14 @@ class EditItemViewModel(
 
     private suspend fun update() {
         val item = database.get(backlogItemKey)
-        Log.i("I/EIVM", "Updating item of id: ${backlogItemKey}...")
-        Log.i("I/EIVM", "Name is ${name.value}")
-        Log.i("I/EIVM", "Type is ${type.value}")
-        Log.i("I/EIVM", "Sort is ${sortValue.value}")
-        Log.i("I/EIVM", "Platform is ${platform.value}")
-        Log.i("I/EIVM", "Genre is ${genre.value}")
-        Log.i("I/EIVM", "Progress is ${progressDone.value} / ${progressTotal.value}")
 
         item.name = name.value.toString()
-        item.type = type.value.toString()
         item.sortValue = sortValue.value.toString().toInt()
         item.platform = platform.value.toString()
         item.genre = genre.value.toString()
         item.progressDone = progressDone.value.toString().toInt()
         item.progressTotal = progressTotal.value.toString().toInt()
+        item.notes = notes.value.toString()
         database.update(item)
     }
-
 }

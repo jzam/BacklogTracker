@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type_array">
+        <item name = "game_type">game</item>
+        <item name = "show_type">show</item>
+        <item name = "book_type">book</item>
+    </string-array>
+
+    <string-array name="game_genre_array">
+        <item>Action</item>
+        <item>Strategy</item>
+        <item>Adventure</item>
+        <item>RPG</item>
+        <item>Simulation</item>
+        <item>Fighting</item>
+        <item>Shooter</item>
+        <item>RTS</item>
+        <item>MMO</item>
+        <item>Puzzle</item>
+        <item>Rhythm</item>
+        <item>FPS</item>
+        <item>TPS</item>
+        <item>Platformer</item>
+        <item>Visual Novel</item>
+    </string-array>
+
+    <string-array name="game_platform_array">
+        <item>PC</item>
+        <item>Switch</item>
+        <item>PS4</item>
+        <item>PS3</item>
+        <item>Vita</item>
+        <item>Wii U</item>
+        <item>3DS</item>
+        <item>PSP</item>
+        <item>PS5</item>
+        <item>Xbox Series X</item>
+        <item>Xbox One</item>
+    </string-array>
+</resources>

@@ -21,4 +21,11 @@
     <string name="placeholder_item_genre">JRPG</string>
     <string name="placeholder_item_sort">20</string>
     <string name="edit_delete">Delete</string>
+    <string name="search_label">Search</string>
+    <string name="search_game_fragment_label">Search Game</string>
+    <string name="search_text">Search game in GiantBomb database</string>
+    <string name="search_game_detail_label">Search Game Detail</string>
+    <string name="notes_label">Notes</string>
+    <string name="item_image_desc">Item Image</string>
+    <string name="go_label">GO</string>
 </resources>

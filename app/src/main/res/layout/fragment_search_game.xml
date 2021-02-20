@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="searchGameViewModel"
+            type="jzam.backlog.backlogtracker.searchgame.SearchGameViewModel" />
+    </data>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".searchgame.SearchGameFragment">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/game_search_text"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_text"
+                app:hintEnabled="true"
+                app:layout_constraintEnd_toStartOf="@id/execute_search_game_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:text="@={searchGameViewModel.searchText}"
+                    android:imeOptions="actionDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/execute_search_game_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/go_label"
+                android:onClick="@{() -> searchGameViewModel.onSearchClicked()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/game_search_text"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_game_list"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/game_search_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
